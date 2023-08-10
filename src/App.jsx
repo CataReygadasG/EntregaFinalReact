@@ -10,10 +10,7 @@ function App() {
  
 <main>
   <NavBar/>
-  <nav> 
-    <Link to="/carrito">Carrito</Link>
-    </nav>
- 
+  <Link to="/carrito">Carrito</Link>
   {
     Joyas && Joyas.map(producto => {
       return(

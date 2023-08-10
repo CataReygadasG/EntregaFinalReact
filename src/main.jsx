@@ -10,7 +10,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
     <Routes>
-    <Route path='/home' element={<App />} />
+    <Route path='/' element={<App />} />
     <Route exact path='/carrito' element={<Cart />} />
     <Route exact path='/item' element={<Items />} />
     </Routes>
