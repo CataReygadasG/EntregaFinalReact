@@ -1,7 +1,7 @@
 import Cantidad from "./componentes/Cantidad";
-import ItemListContainer from "./componentes/ItemListContainer";
 import NavBar from "./componentes/NavBar"
 import Joyas from "./joyas.json"
+import { Link } from "react-router-dom";
 
 
 function App() {
@@ -10,8 +10,12 @@ function App() {
  
 <main>
   <NavBar/>
+  <nav> 
+    <Link to="/carrito">Carrito</Link>
+    </nav>
+ 
   {
-    Joyas.map(producto => {
+    Joyas && Joyas.map(producto => {
       return(
         <article className="box" key={producto.id}>
           <strong>{producto.name}</strong> 
