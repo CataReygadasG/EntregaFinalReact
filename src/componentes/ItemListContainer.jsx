@@ -1,42 +1,39 @@
-import { useEffect, useState } from "react";
-import Item from "./Item";
+import { useEffect, useState } from "react"
+import Joyas from "../joyas.json"
+function ItemListContainer ()  {
+  const  [isLoading, setLoading] = useState(true);
+  
+  useEffect(()=>{
+    Joyas()
+            .then((res) => res.json())
+            .then((json) => console.log(json))
+            .catch((error) => console.error(error))
+            .finally(() => {setLoading(false)
+            })
+  }, [])
 
-function ItemListContainer() {
-  const [productos, setProductos] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setProductos([
-        {
-          id: 1,
-          nombre: "Anillo de oro blanco con brillante",
-          stock: 5,
-          precio: 890000,
-        },
-        {
-          id: 2,
-          nombre: "Anillo líneas entrelazadas de oro blanco",
-          stock: 0,
-          precio: 1000000,
-        },
-        {
-          id: 3,
-          nombre: "Anillo de brillantes recubierto con oro blanco",
-          stock: 0,
-          precio: 750000,
-        },
-      ]);
-      setIsLoading(false);
-    }, 2000);
-  }, []);
-
+  if (isLoading)
   return (
-    <>
-      {isLoading && <h4>Cargando...</h4>}
-      {!isLoading && productos.map((producto) => <Item producto={producto} />)}
-    </>
-  );
+<div>
+  <h3>Cargando...</h3>
+</div>
+);
+  return (
+   <main>
+    {
+    Joyas && Joyas.map(producto => {
+      return(
+        <article className="box" key={producto.id}>
+          <strong>{producto.name}</strong> 
+          {producto.price}
+          </article>
+          
+      )
+      
+    })
+  }
+   </main>
+  )
 }
 
-export default ItemListContainer;
+export default ItemListContainer
