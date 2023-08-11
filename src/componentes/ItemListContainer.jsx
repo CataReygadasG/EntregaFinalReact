@@ -1,39 +1,37 @@
-import { useEffect, useState } from "react"
-import Joyas from "../joyas.json"
-function ItemListContainer ()  {
-  const  [isLoading, setLoading] = useState(true);
-  
-  useEffect(()=>{
-    Joyas()
-            .then((res) => res.json())
-            .then((json) => console.log(json))
-            .catch((error) => console.error(error))
-            .finally(() => {setLoading(false)
-            })
-  }, [])
+import { useEffect, useState } from "react";
+
+function ItemListContainer() {
+  const [isLoading, setLoading] = useState(true);
+  const [joyas, setJoyas] = useState([]);
+
+  useEffect(() => {
+    // Simular una llamada a una API o carga de archivo JSON
+    setTimeout(() => {
+      fetch("/joyas.json") // Ruta a tu archivo JSON
+        .then((response) => response.json())
+        .then((data) => {
+          setJoyas(data); // Almacenar los productos en el estado
+          setLoading(false); // Cambiar el estado de carga
+        });
+    }, 2000); // Simulamos una demora de 2 segundos
+  }, []);
 
   if (isLoading)
+    return (
+      <div>
+        <h3>Cargando...</h3>
+      </div>
+    );
+    
   return (
-<div>
-  <h3>Cargando...</h3>
-</div>
-);
-  return (
-   <main>
-    {
-    Joyas && Joyas.map(producto => {
-      return(
+    <main>
+      {joyas.map((producto) => (
         <article className="box" key={producto.id}>
-          <strong>{producto.name}</strong> 
-          {producto.price}
-          </article>
-          
-      )
-      
-    })
-  }
-   </main>
-  )
+          <strong>{producto.name}</strong> {producto.price}
+        </article>
+      ))}
+    </main>
+  );
 }
 
-export default ItemListContainer
+export default ItemListContainer;

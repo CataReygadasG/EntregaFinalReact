@@ -5,7 +5,7 @@ import './index.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Cart from './routes/Cart.jsx'
 import ItemListContainer from './componentes/ItemListContainer.jsx'
-
+import Producto from "./routes/Producto.jsx"
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -13,6 +13,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Routes>
     <Route path='/' element={<App />} />
     <Route path='/productos' element={<ItemListContainer />} />
+    <Route path='/productos/:productoId' element={<Producto />} />
     <Route exact path='/carrito' element={<Cart />} />
  
     </Routes>

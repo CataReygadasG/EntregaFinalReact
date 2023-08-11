@@ -36,6 +36,7 @@ const NavBar = () => {
                 <CartWidget items={10}>🛒</CartWidget>
                 <Link to="/productos">Productos</Link>
                 <Link to="/carrito">🛒</Link>
+                
             </ul>
         </nav>
 
