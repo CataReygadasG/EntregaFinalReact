@@ -1,3 +1,4 @@
+//Muestra los productos por id
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
 function Producto()  {
@@ -8,7 +9,7 @@ useEffect(() => {
         fetch('/joyas.json') 
           .then((res) => res.json())
           .then((json) => {
-            const producto = json.find(item => item.id == params.productoId);
+            const producto = json.find(item => item.id == params.id);
             console.log(producto)
           })
           .catch((error) => console.error(error))

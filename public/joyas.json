@@ -1,6 +1,15 @@
 [
-  { "id": 1, "name": "Anillo", "price": 800000 },
-  { "id": 2, "name": "Collar", "price": 500000 },
-  { "id": 3, "name": "Arete", "price": 400000 }
+  {"id": 1,"name": "Anillo de oro blanco con brillante", "price": 890000, "category": "anillo"},
+  {"id": 2, "name": "Anillo líneas entrelazadas de oro blanco","price": 1000000, "category": "anillo"},
+  {"id": 3, "name": "Anillo de brillantes recubierto con oro blanco","price": 750000, "category": "anillo"},
+  {"id": 4, "name": "Argollas de compromiso de oro de 14k","price": 750000},
+  {"id": 5, "name": "Aretes de oro dobles", "price": 350000, "category": "arete"},
+  {"id": 6, "name": "Aretes de oro redondo","price": 250000, "category": "arete"},
+  {"id": 7, "name": "Arete de oro", "price": 250000, "category": "arete"},
+  {"id": 8, "name": "Arete de oro triangula", "price": 250000, "category": "arete"},
+  {"id": 9, "name": "Collar de flor", "price": 350000, "category": "collar"},
+  {"id": 10, "name": "Collar punto de luz", "price": 380000, "category": "collar"},
+  {"id": 11, "name": "Collar de corazón", "price": 250000, "category": "collar"},
+  {"id": 12, "name": "Collar con diseño de cuarzo", "price": 250000, "category": "collar"}
 ]
 

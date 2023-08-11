@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import './NavBar.css';
-import CartWidget from "./CartWidget"
 import "../App"
 import { Link } from "react-router-dom";
 const NavBar = () => {
@@ -29,14 +28,14 @@ const NavBar = () => {
 
         <nav className={ `NavBar-nav ${ menu ? 'isActive' : '' }` }>
             <ul className="NavBar-ul">
-                <li className="NavBar-li"><a href="#" className="NavBar-a">Inicio</a></li>
+                <Link to="/">Inicio</Link>
+                <Link to="/productos">Productos</Link>
+                <Link to="/carrito">🛒</Link>
                 <li className="NavBar-li"><a href="#" className="NavBar-a">Anillos</a></li>
                 <li className="NavBar-li"><a href="#" className="NavBar-a">Aretes</a></li>
                 <li className="NavBar-li"><a href="#" className="NavBar-a">Collares</a></li>
-                <CartWidget items={10}>🛒</CartWidget>
-                <Link to="/productos">Productos</Link>
-                <Link to="/carrito">🛒</Link>
-                
+              
+
             </ul>
         </nav>
 

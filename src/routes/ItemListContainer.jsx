@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import NavBar from "../componentes/NavBar";
 function ItemListContainer() {
   const [isLoading, setLoading] = useState(true);
   const [joyas, setJoyas] = useState([]);
@@ -25,6 +25,7 @@ function ItemListContainer() {
     
   return (
     <main>
+       <NavBar/>
       {joyas.map((producto) => (
         <article className="box" key={producto.id}>
           <strong>{producto.name}</strong> {producto.price}
