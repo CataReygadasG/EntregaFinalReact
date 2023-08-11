@@ -28,9 +28,9 @@ const NavBar = () => {
 
         <nav className={ `NavBar-nav ${ menu ? 'isActive' : '' }` }>
             <ul className="NavBar-ul">
-                <Link to="/">Inicio</Link>
-                <Link to="/productos">Productos</Link>
-                <Link to="/carrito">🛒</Link>
+                <Link to="/"> Inicio/ </Link>
+                <Link to="/productos"> Productos/ </Link>
+                <Link to="/carrito"> 🛒 </Link>
                 <li className="NavBar-li"><a href="#" className="NavBar-a">Anillos</a></li>
                 <li className="NavBar-li"><a href="#" className="NavBar-a">Aretes</a></li>
                 <li className="NavBar-li"><a href="#" className="NavBar-a">Collares</a></li>

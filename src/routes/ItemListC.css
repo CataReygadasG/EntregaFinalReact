@@ -1,0 +1,15 @@
+body{
+
+    text-align: center;
+    object-fit: contain;
+    margin-left: auto;
+    margin-right: auto;
+}
+.box{
+    min-height: 100px;
+    width: 25%;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    border: 5px solid rgb(165, 153, 116);
+
+}
