@@ -23,7 +23,13 @@ return (
     <h3>Cargando...</h3>
   </div>
 );
-return <div>Catalogo de joyas</div>
+return <div>
+  Catalogo de joyas
+  <h3>{joya.name}</h3>
+<h4> ${joya.price} </h4>
+</div> 
+
+ 
 }
 
 export default Producto
