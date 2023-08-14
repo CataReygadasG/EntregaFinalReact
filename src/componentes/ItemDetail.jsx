@@ -6,9 +6,8 @@ function ItemDetail({joya})  {
   Catalogo de joyas
   <h3>{joya.name}</h3>
   <h4> ${joya.price} </h4>
-  {joya.map(item => <ItemCount joya={item} key={item.id} />)}
 </article> 
-
+<ItemCount joya={joya} />
 );
 
     
