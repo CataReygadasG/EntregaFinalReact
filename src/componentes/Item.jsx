@@ -1,15 +1,10 @@
-function Item({ producto } ){
-    return (
-    <article key={producto.id}>
-            <h3>{producto.nombre}</h3>
-            <h4> ${producto.precio} </h4>
-            {producto.stock > 0 ?(
-                 <button>Agregar al carrito</button>
-                 ):(
-                  <span>No tenemos más productos de este tipo</span>
-                  )}
-                 
-            </article>  
-    );
+function Item({joya}) {     
+  return (
+    <article className="box">
+    <strong>{joya.name}</strong> ${joya.price}
+    <button className="carrito">Agregar al 🛒</button>
+    </article>
+  );
 }
+
 export default Item;

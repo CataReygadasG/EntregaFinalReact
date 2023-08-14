@@ -28,7 +28,6 @@ const NavBar = () => {
         <nav className={ `NavBar-nav ${ menu ? 'isActive' : '' }` }>
             <ul className="NavBar-ul">
                 <Link to="/"> Inicio/ </Link>
-                <Link to="/productos"> Productos/ </Link>
                 <Link to="/carrito"> 🛒 </Link>
                 
               

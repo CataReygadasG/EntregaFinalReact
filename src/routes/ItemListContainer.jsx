@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
+import ItemList from "../componentes/ItemList"
+import { useParams, Link } from "react-router-dom";
 import './ItemListC.css';
-import { Link, useParams } from "react-router-dom";
 function ItemListContainer() {
   const [isLoading, setLoading] = useState(true);
   const [joyas, setJoyas] = useState([]);
   const category = ["anillo", "arete", "collar"]
   const {id} = useParams();
-  
   useEffect(() => {
     // Simular una llamada a una API o carga de archivo JSON
     setTimeout(() => {
@@ -31,25 +31,16 @@ function ItemListContainer() {
         <h3>Cargando...</h3>
       </div>
     );
-  
-    
   return (
     <main>
-       <nav>
-          <span>Categorias
-            {category.map(categoria => <Link key={categoria} to={`/category/${categoria}`}></Link> )}
-          </span>
-          <Link to="/">
-            <button>Productos</button>
+        <nav className="productos">
+        <Link to="/">
+            <button>Todos los productos</button>
           </Link>
+          {category.map(categoria => <Link key={categoria} to={`/category/${categoria}`}> <button>{categoria}</button></Link> )}
+         
           </nav>
-      {joyas.map((producto) => (
-        <article className="box" key={producto.id}>
-          <strong>{producto.name}</strong> ${producto.price}
-          
-        </article>
-      ))}
-        
+          <ItemList joyas={joyas} />
     </main>
   );
 }
