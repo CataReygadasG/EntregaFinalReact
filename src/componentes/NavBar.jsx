@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import './NavBar.css';
-import "../App"
 import { Link } from "react-router-dom";
 const NavBar = () => {
 
@@ -31,9 +30,7 @@ const NavBar = () => {
                 <Link to="/"> Inicio/ </Link>
                 <Link to="/productos"> Productos/ </Link>
                 <Link to="/carrito"> 🛒 </Link>
-                <li className="NavBar-li"><a href="#" className="NavBar-a">Anillos</a></li>
-                <li className="NavBar-li"><a href="#" className="NavBar-a">Aretes</a></li>
-                <li className="NavBar-li"><a href="#" className="NavBar-a">Collares</a></li>
+                
               
 
             </ul>

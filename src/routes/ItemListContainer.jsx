@@ -6,6 +6,8 @@ function ItemListContainer() {
   const [isLoading, setLoading] = useState(true);
   const [joyas, setJoyas] = useState([]);
   const category = ["anillo", "arete", "collar"]
+  
+
   useEffect(() => {
     // Simular una llamada a una API o carga de archivo JSON
     setTimeout(() => {
