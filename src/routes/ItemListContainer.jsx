@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import NavBar from "../componentes/NavBar";
 import './ItemListC.css';
 import { Link } from "react-router-dom";
 function ItemListContainer() {
@@ -7,7 +6,6 @@ function ItemListContainer() {
   const [joyas, setJoyas] = useState([]);
   const category = ["anillo", "arete", "collar"]
   
-
   useEffect(() => {
     // Simular una llamada a una API o carga de archivo JSON
     setTimeout(() => {
@@ -29,7 +27,6 @@ function ItemListContainer() {
     
   return (
     <main>
-       <NavBar/>
        <nav>
           <span>Categorias
             {category.map(categoria => <Link key={categoria} to={`/category/${categoria}`}></Link> )}
