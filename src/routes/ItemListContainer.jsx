@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import './ItemListC.css';
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 function ItemListContainer() {
   const [isLoading, setLoading] = useState(true);
   const [joyas, setJoyas] = useState([]);
   const category = ["anillo", "arete", "collar"]
+  const {id} = useParams();
   
   useEffect(() => {
     // Simular una llamada a una API o carga de archivo JSON
@@ -12,11 +13,17 @@ function ItemListContainer() {
       fetch("/joyas.json") // Ruta a tu archivo JSON
         .then((response) => response.json())
         .then((data) => {
-          setJoyas(data); // Almacenar los productos en el estado
+          //setJoyas(data); // Almacenar los productos en el estado
+        if (id) {
+          const arrayFiltrado = data.filter(item => item.category === id);
+          setJoyas(arrayFiltrado);
+          } else {
+          setJoyas(data);
+          }
           setLoading(false); // Cambiar el estado de carga
         });
     }, 2000); // Simulamos una demora de 2 segundos
-  }, []);
+  }, [id]);
 
   if (isLoading)
     return (
@@ -24,6 +31,7 @@ function ItemListContainer() {
         <h3>Cargando...</h3>
       </div>
     );
+  
     
   return (
     <main>

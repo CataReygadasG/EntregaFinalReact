@@ -5,6 +5,7 @@ function Producto()  {
 const params = useParams();
 const [isLoading, setIsLoading] = useState(true);
 const [joya, setJoya] = useState({});
+
 useEffect(() => {
         fetch('/joyas.json') 
           .then((res) => res.json())

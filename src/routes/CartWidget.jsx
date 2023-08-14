@@ -1,8 +1,6 @@
-import NavBar from "../componentes/NavBar";
   const CartWidget = () => {
     return (
-      <div>
-        <NavBar/>
+      <div>        
         Carrito de compras
       </div>
     )
