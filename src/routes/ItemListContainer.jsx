@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import ItemList from "../componentes/ItemList"
 import { useParams, Link } from "react-router-dom";
-import './itemlistc.css';
+//import './itemlistc.css';
 function ItemListContainer() {
   const [isLoading, setLoading] = useState(true);
   const [joyas, setJoyas] = useState([]);
