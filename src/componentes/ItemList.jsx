@@ -1,5 +1,5 @@
 import Item from './Item'
-import '../routes/itemlistc.css';
+//import '../componentes/itemlistc.css';
 function ItemList({joyas}) {
      
   return (
