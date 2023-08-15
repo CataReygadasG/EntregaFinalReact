@@ -18,13 +18,16 @@ useEffect(() => {
           .finally(() => setIsLoading(false))
 }, []);
 console.log({params})
-if (isLoading)
-  return(
-    <ItemDetail joya={joya} />
-    
-    
+if (isLoading) {
+  return (
+    <h1>Cargando..</h1>
+  );
+}
+
+return (
+  <ItemDetail joya={joya} />
 );
- 
+
 }
 
 export default ItemDetailContainer
