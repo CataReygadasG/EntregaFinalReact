@@ -174,7 +174,7 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: aqua;
+  border-color: rgb(20, 20, 20);
 }
 button:focus,
 button:focus-visible {
@@ -187,7 +187,7 @@ button:focus-visible {
     background-color: #ffffff;
   }
   a:hover {
-    color: #dfdc92;
+    color: #e4d8a4;
   }
   button {
     background-color: #f9f9f9;

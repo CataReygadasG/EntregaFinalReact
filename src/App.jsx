@@ -15,6 +15,7 @@ function App() {
     <Route path='/category/:id' element={<ItemListContainer />} />
     <Route path='/item/:id' element={<ItemDetailContainer />} />
     <Route exact path='/carrito' element={<CartWidget />} />
+
  
     </Routes>
     </BrowserRouter>

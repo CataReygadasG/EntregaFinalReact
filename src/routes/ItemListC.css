@@ -1,19 +1,33 @@
-body{
-    object-fit: contain;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
+
 .box{
-    min-height: 100px;
-    width: 25%;
+    min-height: 10px;
+    width: 35%;
     text-align: center;
     background-color: rgb(255, 255, 255);
     border: 5px solid rgb(165, 153, 116);
+    display: flex;
+    gap: rem;
+    padding-block: 2rem;
+    flex-direction: column;
+    border-radius: 1rem;
+    overflow: hidden;
+    }
 
-}
 .productos{
     display: flex; 
     align-items: center;
-    border: 10px;
+    border: 5px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    padding-block: 1rem;
 }
+.carrito{
+    text-align: center;
+
+    flex-direction: column;
+    border-radius: 1rem;
+    overflow: hidden;
+  
+}
+
+
