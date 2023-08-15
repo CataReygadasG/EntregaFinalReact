@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import '../routes/itemlistc.css';
+//import '../routes/itemlistc.css';
 function Item({joya}) {     
   return (
     <article className="box">
