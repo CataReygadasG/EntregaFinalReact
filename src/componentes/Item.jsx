@@ -2,8 +2,9 @@ import { Link } from "react-router-dom";
 import useContador from "../hooks/useContador";
 function Item({joya}) { 
   const { cantidad, incrementar, decrementar} = useContador(0);
+  console.log({joya})
   return(<article className="box">
-    <strong>{joya.name}</strong> ${joya.price} 
+    <strong>{joya.name}</strong> ${joya.price}  
     <button onClick={incrementar}>+</button>
     <p>{cantidad}</p>
     <button onClick={decrementar}>-</button>
