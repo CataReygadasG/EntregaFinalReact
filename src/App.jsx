@@ -3,16 +3,12 @@ import ItemDetailContainer from "./routes/ItemDetailContainer";
 import CartWidget from "./routes/CartWidget";
 import NavBar from "./componentes/NavBar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { createContext } from "react";
-import CartProvider from "./context/cartContext";
 
+import Item from "./componentes/Item"
 
-export const ThemeContext = createContext();
-console.log({ThemeContext})
 function App() {
   return (
-    <CartProvider>
-    {/* <CartContext.Provider value={[]}> */}
+    
       <BrowserRouter>
         <NavBar />
         <Routes>
@@ -22,8 +18,7 @@ function App() {
           <Route exact path="/carrito" element={<CartWidget />} />
         </Routes>
       </BrowserRouter>
-    {/* </CartContext.Provider> */}
-    </CartProvider>
+
   );
 }
 

@@ -34,7 +34,7 @@ const NavBar = () => {
           <Link to="/category/:id">Anillos/</Link>
           <Link to="/category/:id">Aretes/</Link>
           <Link to="/category/:id">Collares/</Link>
-          <Link to="/carrito"> Carrito de compras </Link>
+          <Link to="/carrito"> 🛒</Link>
         </ul>
       </nav>
     </header>
