@@ -1,5 +1,4 @@
 import { useState } from "react"
-
 function InputCount({onConfirm}) {
     const [value, setValue] = useState();
     const handleChange = (event) => {
