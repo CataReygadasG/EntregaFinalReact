@@ -1,12 +1,14 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ItemList from "../componentes/ItemList"
 import { useParams, Link } from "react-router-dom";
-//import '../componentes/itemlistc.css';
+import { CartContext } from "../context/cartContext";
+
 function ItemListContainer() {
   const [isLoading, setLoading] = useState(true);
   const [joyas, setJoyas] = useState([]);
   const category = ["anillo", "arete", "collar"]
   const {id} = useParams();
+  const {cartArray} = useContext(CartContext)
   useEffect(() => {
     // Simular una llamada a una API o carga de archivo JSON
     setTimeout(() => {
@@ -24,7 +26,7 @@ function ItemListContainer() {
         });
     }, 2000); // Simulamos una demora de 2 segundos
   }, [id]);
-
+console.log(cartArray)
   if (isLoading)
     return (
       <div>

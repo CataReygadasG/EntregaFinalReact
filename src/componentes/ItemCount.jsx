@@ -1,5 +1,5 @@
 import useContador from "../hooks/useContador";
-function ItemCount({joya}) {
+const ItemCount = ({joya, onAdd}) =>  {
   const { cantidad, incrementar, decrementar} = useContador(0);
   
     return( <article className="box">
@@ -10,6 +10,7 @@ function ItemCount({joya}) {
     <button onClick={incrementar}>+</button>
     <p>{cantidad}</p>
     <button onClick={decrementar}>-</button>
+    <button onClick={() => onAdd(cantidad)}>Agregar producto</button>
 
     
   </article> 

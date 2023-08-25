@@ -5,10 +5,11 @@ import NavBar from "./componentes/NavBar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Item from "./componentes/Item"
+import CartProvider from "./context/cartContext";
 
 function App() {
   return (
-    
+    <CartProvider>
       <BrowserRouter>
         <NavBar />
         <Routes>
@@ -18,7 +19,7 @@ function App() {
           <Route exact path="/carrito" element={<CartWidget />} />
         </Routes>
       </BrowserRouter>
-
+      </CartProvider>
   );
 }
 
