@@ -3,8 +3,8 @@ const ItemCount = ({joya, onAdd}) =>  {
   const { cantidad, incrementar, decrementar} = useContador(0);
   
     return( <article className="box">
-    Catalogo de joyas
-    <h3>{joya.name}</h3>
+    <h2>{joya.name}</h2>
+    <h3>{joya.description}</h3>
     <h4> ${joya.price} </h4>
   
     <button onClick={incrementar}>+</button>
