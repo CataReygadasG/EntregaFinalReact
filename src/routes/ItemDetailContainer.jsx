@@ -33,6 +33,7 @@ const onAdd = (count) => {
 
 return (
   <ItemDetail joya={joya} onAdd={onAdd} added={added} />
+  
 );
 }
 export default ItemDetailContainer

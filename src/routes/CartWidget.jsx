@@ -1,7 +1,25 @@
-const CartWidget= ()=>{
- 
+import { useContext } from "react";
+import { CartContext } from "../context/cartContext";
+import CartItem from "../componentes/CartItem";
+import { Link } from "react-router-dom";
 
-  return <div>Carrito de compras</div>
+const CartWidget= ()=>{
+const {cartArray, deleteItem} = useContext(CartContext); 
+if (cartArray.lenght === 0){
+  return(
+    //no me lo visualiza por pantalla
+    <div>
+      <p>No hay productos en el carrito de compras</p>
+      <Link to='/'>Volver al inicio</Link>
+    </div>
+  )
+}
+return(
+  <div>
+    
+    {cartArray.map(prod => <CartItem key={prod.item.id} joya={prod} deleteItem={deleteItem}/>)}
+  </div>
+)
 
 
 }

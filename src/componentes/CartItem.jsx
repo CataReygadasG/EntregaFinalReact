@@ -1,11 +1,12 @@
-const CartItem = ({joya,handleDelete}) =>  {
-  const { cantidad, } = useContador(0);
+const CartItem = ({joya,deleteItem}) =>  {
+  
   
     return( <article className="box">
     Catalogo de joyas
-    <h3>{joya.name}</h3>
-    <h4> ${joya.price} </h4>
-    <button onClick={handleDelete}>Eliminar</button>
+    <h3>{joya.item.name}</h3>
+    <h4>cantidad: {joya.item.count}</h4>
+    <h4> ${joya.item.price} CLP </h4>
+    <button onClick={()=>  deleteItem(joya.item.id)}>Eliminar</button>
     
 
     

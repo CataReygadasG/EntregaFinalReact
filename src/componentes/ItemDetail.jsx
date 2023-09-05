@@ -9,9 +9,9 @@ const ItemDetail = ({joya, onAdd, added}) => {
     <article>
   {
     added ? (
-      <Link to= '/cart' >Go to Cart</Link>
+      <Link to='/carrito' >Go to Cart</Link>
     ) : (
-      <ItemCount joya={joya} initial={1} stock={joya.stock} onAdd = {onAdd}  />
+      <ItemCount joya={joya} initial={1} stock={joya.count} onAdd = {onAdd}  />
     )
     
   }

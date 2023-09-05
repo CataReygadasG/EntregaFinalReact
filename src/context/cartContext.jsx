@@ -5,16 +5,21 @@ export const CartContext = createContext(); //crear un contecto y guardarlo dent
 const CartProvider = ({ children}) =>{ //va a ser el provedor de mi contexto, vamos a recibir las props
     const [cartArray, setCartArray] = useState([]);
     const addToCart = (joya, count) => {
-      console.log(`Agregaste ${joya.name}, cantidad: ${count}`);
-      const newObj = {
-        item: joya,
-        count
+      if(isInCart(joya.id)){
+        console.log("ya esta el producto en el carrito") //acción cuando ya esta agregado
+      }else{
+        console.log(`Agregaste ${joya.name}, cantidad: ${count}`);
+        const newObj = {
+          item: joya,
+          count
+        }
+        setCartArray([...cartArray, newObj])
       }
-      setCartArray([...cartArray, newObj])
-    }
+      }
+    
    
     const deleteItem = (id) => {
-      const updateCart = cartArray.filter(element=>element.id !== id); 
+      const updateCart = cartArray.filter(element=>element.item.id !== id); 
       setCartArray(updateCart);
     }
 
@@ -22,7 +27,7 @@ const CartProvider = ({ children}) =>{ //va a ser el provedor de mi contexto, va
       setCartArray([]);
     }
     const isInCart = (id) => {
-      return cartArray.some(element=>element.id === id)
+      return cartArray.some(element=>element.item.id === id)
     }
     const value = {
       cartArray,
