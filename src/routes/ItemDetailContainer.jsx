@@ -25,7 +25,7 @@ const { addToCart } = useContext(CartContext)
 // console.log({params})
 useEffect(()=> {
   setIsLoading(true)
-  const collectionProd = collection(db, "joyas")
+  const collectionProd = collection(db, "items")
   const referenciaAlDoc =doc(collectionProd, id)
   getDoc(referenciaAlDoc)
 .then((res)=> setJoya({id:res.id, ...res.data()}))
