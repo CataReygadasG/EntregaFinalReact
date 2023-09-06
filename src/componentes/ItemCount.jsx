@@ -5,7 +5,7 @@ const ItemCount = ({joya, onAdd}) =>  {
     return( <article className="box">
     <h2>{joya.name}</h2>
     <h3>{joya.description}</h3> 
-    <h4> ${joya.price} </h4>
+    <h4> ${joya.price} CLP</h4>
   
     <button onClick={incrementar}>+</button>
     <p>{cantidad}</p>

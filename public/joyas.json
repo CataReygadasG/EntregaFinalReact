@@ -1,8 +1,6 @@
 [
-  {"name": "Anillo de oro blanco con brillante", "price": 890000, "category": "anillo", "count": 4},
-  {"name": "Anillo líneas entrelazadas de oro blanco","price": 1000000, "category": "anillo", "count": 5},
-  {"name": "Anillo de brillantes recubierto con oro blanco","price": 750000, "category": "anillo", "count": 6},
-  {"name": "Argollas de compromiso de oro de 14k","price": 750000, "stock": 7},
+
+  
   {"name": "Aretes de oro dobles", "price": 350000, "category": "arete", "count": 8},
   {"name": "Aretes de oro redondo","price": 250000, "category": "arete", "count": 9},
   {"name": "Arete de oro", "price": 250000, "category": "arete", "count": 10},

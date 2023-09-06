@@ -4,6 +4,7 @@ import CartWidget from "./routes/CartWidget";
 import NavBar from "./componentes/NavBar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CartProvider from "./context/cartContext";
+//import {useEffect} from "react";
 function App() {
   return (
     <CartProvider>

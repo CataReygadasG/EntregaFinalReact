@@ -6,11 +6,12 @@ import { CartContext } from "../context/cartContext";
 import { collection, doc, getDoc } from "firebase/firestore";
 import { db } from "../firebase/app";
 function ItemDetailContainer()  {
-const params = useParams();
+//const params = useParams();
 const [isLoading, setIsLoading] = useState(true);
 const [joya, setJoya] = useState({});
 const [added, setAdded] = useState(false);
 const { addToCart } = useContext(CartContext)
+const {id} = useParams()
 
 // useEffect(() => {
 //         fetch('/joyas.json') 
@@ -25,7 +26,9 @@ const { addToCart } = useContext(CartContext)
 // console.log({params})
 useEffect(()=> {
   setIsLoading(true)
+  //coleccion
   const collectionProd = collection(db, "items")
+  //referencia al documento que se quiere traer
   const referenciaAlDoc =doc(collectionProd, id)
   getDoc(referenciaAlDoc)
 .then((res)=> setJoya({id:res.id, ...res.data()}))

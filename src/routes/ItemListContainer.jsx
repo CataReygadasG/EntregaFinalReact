@@ -11,26 +11,7 @@ function ItemListContainer() {
   const [joyas, setJoyas] = useState([]);
   const category = ["anillo", "arete", "collar"]
   const {id} = useParams();
-  const {cartArray} = useContext(CartContext)
-//   useEffect(() => {
-//     // Simular una llamada a una API o carga de archivo JSON
-//     setTimeout(() => {
-//       fetch("/joyas.json") // Ruta a tu archivo JSON
-//         .then((response) => response.json())
-//         .then((data) => {
-//           //setJoyas(data); // Almacenar los productos en el estado
-//         if (id) {
-//           const arrayFiltrado = data.filter(item => item.category === id);
-//           setJoyas(arrayFiltrado);
-//           } else {
-//           setJoyas(data);
-//           }
-//           setLoading(false); // Cambiar el estado de carga
-//         });
-//     }, 2000); // Simulamos una demora de 2 segundos
-//   }, [id]);
-// console.log(cartArray)
-
+  //const {cartArray} = useContext(CartContext)
 useEffect(()=> {
   setLoading(true)
   //const coleccionProductos = id ? query(collection(db, "items"), where("id", "==", id)):collection(db, "joyas") 
