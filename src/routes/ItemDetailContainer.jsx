@@ -3,6 +3,8 @@ import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
 import ItemDetail from "../componentes/ItemDetail"
 import { CartContext } from "../context/cartContext";
+import { collection, doc, getDoc } from "firebase/firestore";
+import { db } from "../firebase/app";
 function ItemDetailContainer()  {
 const params = useParams();
 const [isLoading, setIsLoading] = useState(true);
@@ -10,17 +12,27 @@ const [joya, setJoya] = useState({});
 const [added, setAdded] = useState(false);
 const { addToCart } = useContext(CartContext)
 
-useEffect(() => {
-        fetch('/joyas.json') 
-          .then((res) => res.json())
-          .then((json) => {
-            const producto = json.find(item => item.id == params.id);
-            setJoya(producto)
-          })
-          .catch((error) => console.error(error))
-          .finally(() => setIsLoading(false))
-}, []);
-console.log({params})
+// useEffect(() => {
+//         fetch('/joyas.json') 
+//           .then((res) => res.json())
+//           .then((json) => {
+//             const producto = json.find(item => item.id == params.id);
+//             setJoya(producto)
+//           })
+//           .catch((error) => console.error(error))
+//           .finally(() => setIsLoading(false))
+// }, []);
+// console.log({params})
+useEffect(()=> {
+  setIsLoading(true)
+  const collectionProd = collection(db, "joyas")
+  const referenciaAlDoc =doc(collectionProd, id)
+  getDoc(referenciaAlDoc)
+.then((res)=> setJoya({id:res.id, ...res.data()}))
+.catch((error)=>console.error(error))
+.finally(()=> setIsLoading(false))
+}, [])
+
 if (isLoading) {
   return (
     <h1>Cargando..</h1>

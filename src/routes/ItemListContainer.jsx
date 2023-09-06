@@ -5,6 +5,7 @@ import { CartContext } from "../context/cartContext";
 import { collection, getDocs } from "firebase/firestore";
 import { db} from "../firebase/app";
 
+
 function ItemListContainer() {
   const [isLoading, setLoading] = useState(true);
   const [joyas, setJoyas] = useState([]);
@@ -32,6 +33,7 @@ function ItemListContainer() {
 
 useEffect(()=> {
   setLoading(true)
+  //const coleccionProductos = id ? query(collection(db, "items"), where("id", "==", id)):collection(db, "joyas") 
   const coleccionProductos = collection(db, "items")
   getDocs(coleccionProductos)
   .then((res)=> {
@@ -45,7 +47,7 @@ useEffect(()=> {
   })
   .catch((error)=> console.log(error))
   .finally(()=> setLoading(false))
-}, [])
+}, [id])
 
   if (isLoading)
     return (
