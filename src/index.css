@@ -256,3 +256,14 @@ button{
   display: inline-block;
  
 }
+
+.vacio{
+
+  text-align:center;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  color: white;
+  border: 5px solid transparent
+}

@@ -1,17 +1,28 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import ItemCount from "./ItemCount"
 import { Link } from "react-router-dom"
+import { CartContext } from "../context/cartContext";
 
-const ItemDetail = ({joya, onAdd, added}) => {
+const ItemDetail = ({joya}) => {
+  const [added, setAdded] = useState(false);
 
+  const { addToCart } = useContext(CartContext)
 
+  const onAdd = (count) => {
+    addToCart(joya, count);
+    setAdded(true); //seteo en true cuadno se agrega un producto
+  } 
   return(
-    <article>
+    <article className="box">
+    <h2>{joya.name}</h2>
+    <img src={joya.image} />
+    <h3>{joya.description}</h3> 
+    <h4> ${joya.price} CLP</h4>
   {
     added ? (
       <Link to='/carrito' >Go to Cart</Link>
     ) : (
-      <ItemCount joya={joya} initial={1} stock={joya.count} onAdd = {onAdd}  />
+      <ItemCount initial={1} stock={joya.count} onAdd = {onAdd}  />
     )
     
   }
@@ -21,5 +32,3 @@ const ItemDetail = ({joya, onAdd, added}) => {
     );    
   } 
     export default ItemDetail;
-
-   

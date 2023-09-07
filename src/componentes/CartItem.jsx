@@ -1,18 +1,18 @@
 const CartItem = ({joya,deleteItem}) =>  {
   
   
-    return( <article className="box">
-    Catalogo de joyas
-    <h3>{joya.item.name}</h3>
-    <img src={joya.item.image} />
-    <h4>cantidad: {joya.item.count}</h4>
-    <h4> ${joya.item.price} CLP </h4>
-    <button onClick={()=>  deleteItem(joya.item.id)}>Eliminar</button>
-    
+  return( <article className="box">
+  Catalogo de joyas
+  <h3 style={{color:'black'}}>{joya.item.name}</h3>
+  <img src={joya.item.image} />
+  <h4 style={{color:'black'}}>cantidad: {joya.count}</h4>
+  <h4 style={{color:'black'}}> ${joya.item.price} CLP </h4>
+  <button onClick={()=>  deleteItem(joya.item.id)}>Eliminar</button>
+  
 
-    
-  </article> 
-  );
+  
+</article> 
+);
 }
 
 

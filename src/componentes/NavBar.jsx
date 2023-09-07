@@ -31,9 +31,9 @@ const NavBar = () => {
       <nav className={`NavBar-nav ${menu ? "isActive" : ""}`}>
         <ul className="NavBar-ul">
           <Link to="/"> Home/ </Link>
-          <Link to="/category/:id">Anillos/</Link>
-          <Link to="/category/:id">Aretes/</Link>
-          <Link to="/category/:id">Collares/</Link>
+          <Link to="/category/anillo">Anillos/</Link>
+          <Link to="/category/arete">Aretes/</Link>
+          <Link to="/category/collar">Collares/</Link>
           <Link to="/carrito"> 🛒</Link>
         </ul>
       </nav>
