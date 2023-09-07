@@ -29,12 +29,20 @@ const CartProvider = ({ children}) =>{ //va a ser el provedor de mi contexto, va
     const isInCart = (id) => {
       return cartArray.some(element=>element.item.id === id)
     }
+    const total = () =>{
+      //funcion para sacar el total
+    }
+    const cartQuantity = () =>{
+      //funcion para la cantidad total para el icono del carrito en el navbar
+    }
     const value = {
       cartArray,
       addToCart, 
       deleteItem,
       clearCart,
-      isInCart
+      isInCart,
+      total, 
+      cartQuantity
     }
 
   return(

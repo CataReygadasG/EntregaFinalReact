@@ -1,12 +1,12 @@
 import { useState, useContext} from "react"
 import { CartContext } from "../../context/cartContext"
-import { addDoc, collection, serverTimestamp } from "firebase/firestore"
+import {addDoc, collection, serverTimestamp } from "firebase/firestore"
 import { db } from "../../firebase/app"
 
 const Checkout = () => {
     const[user, setUser] = useState({})
     const[validateEmail, setValidateEmail]= useState('')
-    const[cart, total, clear] = useContext(CartContext)
+    const{cartArray, total} = useContext(CartContext)
     const datosComprador = (e) => {
         setUser({
             ...user,
@@ -14,13 +14,13 @@ const Checkout = () => {
         })
     }
 const finalizarCompra =(e) => {
-    e.preventDefaul()
-   if(user.name && !user.phone){
+    e.preventDefault()
+   if(!user.name && !user.phone){
     alert("complete los campos")
 }else{
     let order = {
         user,
-        item: cart,
+        item: cartArray,
         total: total(),
         date: serverTimestamp
     }
