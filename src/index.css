@@ -217,11 +217,42 @@ button:focus-visible {
 }
 .carrito{
   text-align: center;
-
   flex-direction: column;
   border-radius: 1rem;
   overflow: hidden;
 
 }
+.box{
+  display: grid;
+  text-align:center;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  height: auto;
+  border-radius: 10px;
+  border: 5px solid rgb(84, 72, 37);
+ 
+}
+img{
+  width: 80%;
+  text-align:center;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  height: auto;
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  
+}
+h2{
+  color: rgb(165, 153, 116);
+  text-align: center;
 
+}
 
+button{
+  text-decoration: none;
+  display: inline-block;
+ 
+}

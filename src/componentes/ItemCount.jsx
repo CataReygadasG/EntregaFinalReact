@@ -4,6 +4,7 @@ const ItemCount = ({joya, onAdd}) =>  {
   
     return( <article className="box">
     <h2>{joya.name}</h2>
+    {/* <img src={joya.image} /> */}
     <h3>{joya.description}</h3> 
     <h4> ${joya.price} CLP</h4>
   

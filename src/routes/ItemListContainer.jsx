@@ -1,8 +1,8 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import ItemList from "../componentes/ItemList"
 import { useParams, Link } from "react-router-dom";
-import { CartContext } from "../context/cartContext";
-import { collection, getDocs } from "firebase/firestore";
+//import { CartContext } from "../context/cartContext";
+import { collection, getDocs, query, where } from "firebase/firestore";
 import { db} from "../firebase/app";
 
 
@@ -14,8 +14,7 @@ function ItemListContainer() {
   //const {cartArray} = useContext(CartContext)
 useEffect(()=> {
   setLoading(true)
-  //const coleccionProductos = id ? query(collection(db, "items"), where("id", "==", id)):collection(db, "joyas") 
-  const coleccionProductos = collection(db, "items")
+  const coleccionProductos = id ? query(collection(db, "items"), where("category", "==", id)):collection(db, "items") 
   getDocs(coleccionProductos)
   .then((res)=> {
     const list = res.docs.map((joyas)=> {
@@ -29,7 +28,7 @@ useEffect(()=> {
   .catch((error)=> console.log(error))
   .finally(()=> setLoading(false))
 }, [id])
-
+  console.log(joyas)
   if (isLoading)
     return (
       <div>

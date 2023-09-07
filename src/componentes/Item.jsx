@@ -4,7 +4,7 @@ function Item({joya}) {
 
   console.log({joya})
   return(<article className="box">
-    <strong>{joya.name}</strong> 
+    <h2>{joya.name}</h2> 
     <img src={joya.image} />
     <h3>{joya.description}</h3>${joya.price} CLP 
     

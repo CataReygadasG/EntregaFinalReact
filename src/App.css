@@ -2,6 +2,7 @@ body{
   text-align: center;
   font-size: 30px;
   padding: 30px;
+  text-align: center;
 }
 #root {
   max-width: 1280px;
@@ -9,7 +10,6 @@ body{
   padding: 2rem;
   /* text-align: center; */
 }
-
 
 .logo {
   height: 6em;
@@ -46,3 +46,4 @@ body{
 .read-the-docs {
   color: #888;
 }
+ 

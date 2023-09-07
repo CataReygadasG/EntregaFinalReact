@@ -47,6 +47,7 @@ const onAdd = (count) => {
 } 
 
 return (
+
   <ItemDetail joya={joya} onAdd={onAdd} added={added} />
   
 );
