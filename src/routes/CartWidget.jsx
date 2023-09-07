@@ -18,6 +18,8 @@ return(
   <div>
     
     {cartArray.map(prod => <CartItem key={prod.item.id} joya={prod} deleteItem={deleteItem}/>)}
+    <Link to= "/checkout">Terminar de comprar</Link>
+    
   </div>
 )
 
