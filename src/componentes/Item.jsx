@@ -9,7 +9,7 @@ function Item({joya}) {
     <h3>{joya.description}</h3>${joya.price} CLP 
     
    
-    <Link to={`/item/${joya.id}`} ><button className="carrito">Ver detalle del producto</button></Link>
+    <Link to={`/item/${joya.id}`} ><button className="carrito">Detalle del producto</button></Link>
     </article>
   );
 }

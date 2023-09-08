@@ -31,6 +31,9 @@ const CartProvider = ({ children}) =>{ //va a ser el provedor de mi contexto, va
     }
     const total = () =>{
       //funcion para sacar el total
+      //multiplica cantidad por precio aun acumulador
+      //para que me saque el total
+      return cartArray.reduce((acc, item)=> acc + item.count * item.item.price, 0)
     }
     const cartQuantity = () =>{
       //funcion para la cantidad total para el icono del carrito en el navbar

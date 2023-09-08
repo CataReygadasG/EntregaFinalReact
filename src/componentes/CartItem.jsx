@@ -7,7 +7,7 @@ const CartItem = ({joya,deleteItem}) =>  {
   <img src={joya.item.image} />
   <h4 style={{color:'black'}}>cantidad: {joya.count}</h4>
   <h4 style={{color:'black'}}> ${joya.item.price} CLP </h4>
-  <button onClick={()=>  deleteItem(joya.item.id)}>Eliminar</button>
+  <button className="botonF" onClick={()=>  deleteItem(joya.item.id)}>Eliminar</button>
   
 
   
